@@ -8,3 +8,13 @@ EX1: (gradient underline)
   h1:hover::after{ width: 0; }
 EX2: (redesigned bullet points)
 EX3: (gradient button that changes color when the mouse is over it)
+
+https://www.youtube.com/watch?v=PTVXnOrQoBQ
+Gradient Border
+Create a simple button in HTML:      EX: <body> <button>Gradient Button</button> </body>
+In CSS:      body{ background-color: #0b0d10; min-height: 100vh; display: flex; justify-content: center; align-items: center; }
+             button( padding: 1em 2em; background-color: #161a20; border: none; color: #f0f0f0; border-radius: 1000px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; position: relative;  display: flex; justify-content: center; align-items: center; }
+             button::after{ content: ''; position: absolute; height: 107%; width: 102%; border-radius: 1000px; background-image: linear-gradient(to bottom right, #008cff, #e100ff); z-index: -1; }
+    **z-index moves the pseudo-element behind the button, sizes adjusted for pseudo-element to appear as a border
+             button:hover{ z-index: 0; box-shadow: 40px 0 100px #008cff, -40px 0 100px #e100ff; }
+    **z-index set to 0 pushes the pseudo-element back to the foreground filling the button with the gradient, opacity of shadows can be reduced
